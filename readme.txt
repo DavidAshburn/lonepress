@@ -5,8 +5,10 @@
 * Local for local development environment
 
 
-Installing Tailwind
-	-requires npm
+//------------------------------------------------------------------------------------------------------------
+// Installing Tailwind ( from a blank slate )
+// 		using this theme only requires the final npx --watch command if you change Tailwind classes
+//------------------------------------------------------------------------------------------------------------
 
 From theme root directory
 	
@@ -66,4 +68,15 @@ A note for production
 	the easiest way is to make a php file in classes that simply lists them
 	the watcher will pick these up and put them into your style.css
 
------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------
+// Data Structures
+//------------------------------------------------------------------------------------------------------------
+
+
+Poems => taxonomized by Poets
+
+
+to-do
+Art => taxonomized by Artists
+Fiction => taxonomized by Authors
