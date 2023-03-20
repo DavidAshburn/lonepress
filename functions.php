@@ -12,6 +12,42 @@ function lone_enqueue_styles() {
 
 add_action('wp_enqueue_scripts', 'lone_enqueue_styles');
 
+
+//------------------------------------------------------------------------------------------------------------
+// Custom Taxonomies ( Poets )
+//------------------------------------------------------------------------------------------------------------
+
+function lone_create_poet_taxonomy() {
+
+	$labels = array(
+		'name' 				=> _x( 'Poets', 'taxonomy general name' ),
+    	'singular_name' 	=> _x( 'Poet', 'taxonomy singular name' ),
+    	'search_items' 		=> __( 'Search Poets' ),
+    	'all_items' 		=> __( 'All Poets' ),
+    	'parent_item' 		=> __( 'Parent Poet' ),
+    	'parent_item_colon' => __( 'Parent Poet:' ),
+    	'edit_item' 		=> __( 'Edit Poet' ), 
+    	'update_item' 		=> __( 'Update Poet' ),
+    	'add_new_item' 		=> __( 'Add New Poet' ),
+    	'new_item_name' 	=> __( 'New Poet Name' ),
+    	'menu_name' 		=> __( 'Poet' ),
+	);
+
+	$args = array(
+		'hierarchical' 		=> true,
+    	'labels' 			=> $labels,
+    	'show_ui' 			=> true,
+    	'show_in_rest' 		=> true,
+    	'show_admin_column' => true,
+    	'query_var' 		=> true,
+    	'rewrite'			=> [ 'slug' => 'poet' ]
+	);
+
+	register_taxonomy('poet', [ 'poem' ], $args);
+}
+
+add_action( 'init', 'lone_create_poet_taxonomy', 0);
+
 //------------------------------------------------------------------------------------------------------------
 // Custom Post Types ( Poems )
 //------------------------------------------------------------------------------------------------------------
@@ -42,7 +78,7 @@ function lone_create_poem_type() {
 		'supports' => array('title', 'editor', 'excerpt', 'author', 'custom-fields'),
 
 		//associating with taxonomy
-		// 'taxonomies' => 
+		'taxonomies' => array('poet'),
 
 		'heirarchical' => true,
 		'public' => true,
@@ -63,37 +99,3 @@ function lone_create_poem_type() {
 
 add_action('init', 'lone_create_poem_type', 0);
 
-//------------------------------------------------------------------------------------------------------------
-// Custom Taxonomies ( Poets )
-//------------------------------------------------------------------------------------------------------------
-
-function lone_create_poet_taxonomy() {
-
-	$labels = array(
-		'name' => _X( 'Poets', 'taxonomy general name' ),
-    	'singular_name' => _X( 'Poet', 'taxonomy singular name' ),
-    	'search_items' =>  __( 'Search Poets' ),
-    	'all_items' => __( 'All Poets' ),
-    	'parent_item' => __( 'Parent Poet' ),
-    	'parent_item_colon' => __( 'Parent Poet:' ),
-    	'edit_item' => __( 'Edit Poet' ), 
-    	'update_item' => __( 'Update Poet' ),
-    	'add_new_item' => __( 'Add New Poet' ),
-    	'new_item_name' => __( 'New Poet Name' ),
-    	'menu_name' => __( 'Poets' ),
-	);
-
-	register_taxonomy('poets', array('poems'), array(
-		'hierarchical' => true,
-    	'labels' => $labels,
-    	'show_ui' => true,
-    	'show_in_rest' => true,
-    	'show_admin_column' => true,
-    	'query_var' => true,
-	    'rewrite' => array( 'slug' => 'poet' ),
-	));
-}
-
-add_action( 'init', 'lone_create_poet_taxonomy', 0 );
-
-?>
