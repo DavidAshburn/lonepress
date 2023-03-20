@@ -20,22 +20,22 @@ Text Domain: lone
   }
 
   .poembox {
-    @apply bg-gray-300 flex flex-col justify-start pt-[3vh] pl-[10%] rounded-r-lg rounded-l-[40px] md:rounded-l-[160px] font-garamond text-xl;
+    @apply bg-gray-300 flex flex-col justify-start ml-2 pt-[3vh] pl-[10%] rounded-r-lg rounded-l-[40px] md:rounded-l-[160px] font-garamond text-xl;
   }
 
   .poembody {
-    @apply text-xl md:text-2xl font-medium border-l-8 border-t-2 border-white rounded-tl-[40px] rounded-br-lg bg-gradient-to-br from-white via-gray-100 to-gray-300 pl-2 md:pl-8 py-8;
+    @apply text-xl md:text-2xl font-medium border-l-8 border-t-4 border-b-8 mb-1 border-white rounded-tl-[40px] rounded-bl-xl rounded-br-lg bg-gradient-to-br from-white via-gray-100 to-gray-300 pl-2 md:pl-8 py-8;
   }
 
   .poetname {
-    @apply flex items-end font-ebgaramond text-8xl w-0 md:w-[100px] md:h-[1000px] pl-6 pt-24 bg-black invisible md:visible [writing-mode:vertical-rl];
+    @apply flex font-garamond text-8xl text-white justify-end pb-16 w-0 md:w-[100px] md:h-[1000px] bg-black invisible md:visible [writing-mode:vertical-lr] transform rotate-180;
   }
 
   .artbox {
     @apply h-[80vh] bg-gray-100 flex items-center justify-end p-[1vh] rounded-r-lg rounded-l-[20px] md:rounded-l-[160px];
   }
 
-  .vertext {
-    @apply [writing-mode:vertical-rl];
+  .artpiece {
+    @apply h-full w-auto;
   }
 }

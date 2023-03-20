@@ -9,7 +9,7 @@
 		  		while( have_posts() ){
 		  			the_post();
 
-		  			get_template_part('template-parts/poet', 'archive');
+		  			get_template_part('template-parts/artist', 'archive');
 		  		}
 		  	}
 		?>
@@ -17,11 +17,11 @@
 	<div class="poetname">
 		<?php 
 			$terms = get_terms([
-				'taxonomy' => 'poet',
+				'taxonomy' => 'artist',
 				'hide_empty' => false
 			]);
-			$poet_name = $terms[0]->name;
-			$firstlast = explode(" ", $poet_name);
+			$artist_name = $terms[0]->name;
+			$firstlast = explode(" ", $artist_name);
 
 			$first_name = strtolower($firstlast[0]);
 			$last_name = strtoupper($firstlast[1]);

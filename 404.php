@@ -3,11 +3,8 @@
 ?>    
     
 	<article class="px-3 py-5">
-	  <h1>Page not found</h1>
-	  <?php
-	  	get_search_form();
-	  ?>
-  </article>
+	  <h1 class="text-white">Page not found</h1>
+  	</article>
 
 	    
 <?php
