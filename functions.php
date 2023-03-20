@@ -21,8 +21,7 @@ function lone_menus() {
 
 	$locations = array(
 		'primary' => 'Primary Navigation',
-		'artists' => 'Artist List',
-		'poets' => 'Poet List',
+		'secondary' => 'Secondary Navigation',
 		'footer' => 'Footer Menu Items'
 	);
 

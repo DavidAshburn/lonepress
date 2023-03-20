@@ -23,7 +23,7 @@
   	}
 	?>
 	</div>
-	<div class="poetname">
+	<div class="nameplate">
 		<?php 
 			if( $lone_post_type == 'poems') {
 

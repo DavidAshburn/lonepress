@@ -68,6 +68,10 @@ A note for production
 	the easiest way is to make a php file in classes that simply lists them
 	the watcher will pick these up and put them into your style.css
 
+*  WARNING
+	you have to watch the watcher, it will run out of heap memory occasionally, but also show you CSS errors if you make them
+	just restart it if it runs out of memory
+
 
 //------------------------------------------------------------------------------------------------------------
 // Data Structures

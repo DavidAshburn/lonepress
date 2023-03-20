@@ -1,0 +1,1 @@
+<h1 class="text-9xl text-white font-inter">issues</h1>

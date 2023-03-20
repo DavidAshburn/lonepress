@@ -14,7 +14,7 @@
 		  	}
 		?>
 	</div>
-	<div class="poetname">
+	<div class="nameplate">
 		<?php 
 			$terms = get_terms([
 				'taxonomy' => 'artist',
