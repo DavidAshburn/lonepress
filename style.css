@@ -521,12 +521,124 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.poemtitle {
+  margin-bottom: 1rem;
+  border-bottom-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(17 24 39 / var(--tw-border-opacity));
+  padding: 1rem;
+  text-align: end;
+  font-family: Cormorant Garamond, serif;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .poemtitle {
+    margin-bottom: 2.5rem;
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+.poembox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  padding-top: 3vh;
+  padding-left: 10%;
+  font-family: Cormorant Garamond, serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .poembox {
+    border-top-left-radius: 160px;
+    border-bottom-left-radius: 160px;
+  }
+}
+
+.poembody {
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 0.5rem;
+  border-left-width: 8px;
+  border-top-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  --tw-gradient-from: #fff;
+  --tw-gradient-to: rgb(255 255 255 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(243 244 246 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #f3f4f6, var(--tw-gradient-to);
+  --tw-gradient-to: #d1d5db;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .poembody {
+    padding-left: 2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.poetname {
+  visibility: hidden;
+  display: flex;
+  width: 0px;
+  align-items: flex-end;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-top: 6rem;
+  font-family: EB Garamond, serif;
+  font-size: 6rem;
+  line-height: 1;
+  writing-mode: vertical-rl;
+}
+
+@media (min-width: 768px) {
+  .poetname {
+    visibility: visible;
+    height: 1000px;
+    width: 100px;
+  }
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .-mb-2 {
   margin-bottom: -0.5rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mb-\[30\%\] {
   margin-bottom: 30%;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mt-\[30\%\] {
@@ -541,8 +653,16 @@ video {
   height: 100dvh;
 }
 
+.h-\[10vh\] {
+  height: 10vh;
+}
+
 .h-\[20\%\] {
   height: 20%;
+}
+
+.h-\[5vh\] {
+  height: 5vh;
 }
 
 .h-\[80\%\] {
@@ -559,6 +679,10 @@ video {
 
 .w-\[70\%\] {
   width: 70%;
+}
+
+.w-\[90vw\] {
+  width: 90vw;
 }
 
 .min-w-\[20dvw\] {
@@ -591,6 +715,10 @@ video {
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .gap-4 {
@@ -648,6 +776,11 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .py-5 {
@@ -748,6 +881,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:visible {
+    visibility: visible;
+  }
+
   .md\:h-\[100dvh\] {
     height: 100dvh;
   }

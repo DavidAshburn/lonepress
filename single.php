@@ -1,9 +1,8 @@
 <?php
 	get_header();
 ?>    
-    <p>single</p>
-	<article class="px-3 py-5">
-	  <?php
+    <p class="text-white">single</p>
+	<?php
 	  	if( have_posts() ){
 	  		while( have_posts() ){
 
@@ -14,8 +13,7 @@
 
 	  		}
 	  	}
-	  ?>
-  </article>
+	?>
 	    
 <?php
 get_footer();

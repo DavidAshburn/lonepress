@@ -28,10 +28,14 @@ Text Domain: lone
   }
 
   .poetname {
-    @apply flex justify-center w-0 md:w-[100px] md:h-[1000px] bg-black invisible md:visible;
+    @apply flex items-end font-ebgaramond text-8xl w-0 md:w-[100px] md:h-[1000px] pl-6 pt-24 bg-black invisible md:visible [writing-mode:vertical-rl];
   }
 
   .artbox {
     @apply h-[80vh] bg-gray-100 flex items-center justify-end p-[1vh] rounded-r-lg rounded-l-[20px] md:rounded-l-[160px];
+  }
+
+  .vertext {
+    @apply [writing-mode:vertical-rl];
   }
 }
