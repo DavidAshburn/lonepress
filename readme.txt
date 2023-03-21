@@ -4,7 +4,8 @@
 * nginx server
 * Local for local development environment
 
-
+Required Plug-ins
+* All-in-One WP Migration - backups
 * PDF.js viewer Plugin
 	https://wordpress.org/plugins/pdfjs-viewer-shortcode/
 
@@ -12,15 +13,13 @@
 
 //------------------------------------------------------------------------------------------------------------
 // Installing Tailwind ( from a blank slate )
-// 		using this theme only requires the final npx --watch command if you change around Tailwind classes
+// 		the final npx --watch command is all you need to edit styles
 //------------------------------------------------------------------------------------------------------------
 
 From theme root directory
 	
 	echo {} > ./package.json
-
 	npm install tailwindcss --save-dev
-
 	npx tailwindcss init
 
 -----------------------------------------
@@ -44,12 +43,12 @@ From theme root directory
 	-style.css (in theme root directory)
 
 		-----------------------------
-		Tailwind will write this for you, but you need an empty one to start
+		empty to start
 		-----------------------------
 
 -----------------------------------------
 
-Set content files to watch for changes in tailwind.config.js
+modify tailwind.config.js
 
 	module.exports = {
 	  content: ["./**/*.php"],
@@ -61,8 +60,7 @@ Set content files to watch for changes in tailwind.config.js
 
 -----------------------------------------
 
-From theme root directory
-watch for CSS changes with
+From theme root directory (whenever you make changes)
 	
 	npx tailwindcss -i ./assets/css/tailwind.css -o ./style.css --watch
 
@@ -70,8 +68,7 @@ watch for CSS changes with
 
 A note for production
 	classes you want available in wpadmin must be whitelisted
-	the easiest way is to make a php file in classes that simply lists them
-	the watcher will pick these up and put them into your style.css
+	@apply can also give you a semantic class to use in wpadmin
 
 *  WARNING
 	you have to watch the watcher, it will crash occasionally, but also show you CSS errors that crash the build
