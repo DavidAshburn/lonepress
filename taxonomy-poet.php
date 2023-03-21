@@ -1,7 +1,6 @@
 <?php
 	get_header();
 ?>
-
 <div class="flex">
 	<div class="flex flex-col w-[90vw]">
 		<?php
@@ -9,7 +8,7 @@
 		  		while( have_posts() ){
 		  			the_post();
 
-		  			get_template_part('template-parts/poet', 'archive');
+		  			get_template_part('template-parts/poet', 'single');
 		  		}
 		  	}
 		?>

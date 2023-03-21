@@ -36,7 +36,7 @@ Text Domain: lone
   }
 
   .artpiece {
-    @apply h-full w-auto;
+    @apply max-h-full w-auto;
   }
 
   .mainlinks {
