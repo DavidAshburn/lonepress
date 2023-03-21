@@ -5,9 +5,14 @@
 * Local for local development environment
 
 
+* PDF.js viewer Plugin
+	https://wordpress.org/plugins/pdfjs-viewer-shortcode/
+
+	!! filepath hardcoded for each issue post in shortcode block, requires production rewrite !!
+
 //------------------------------------------------------------------------------------------------------------
 // Installing Tailwind ( from a blank slate )
-// 		using this theme only requires the final npx --watch command if you change Tailwind classes
+// 		using this theme only requires the final npx --watch command if you change around Tailwind classes
 //------------------------------------------------------------------------------------------------------------
 
 From theme root directory
@@ -69,7 +74,7 @@ A note for production
 	the watcher will pick these up and put them into your style.css
 
 *  WARNING
-	you have to watch the watcher, it will run out of heap memory occasionally, but also show you CSS errors if you make them
+	you have to watch the watcher, it will crash occasionally, but also show you CSS errors that crash the build
 	just restart it if it runs out of memory
 
 
@@ -77,10 +82,31 @@ A note for production
 // Data Structures
 //------------------------------------------------------------------------------------------------------------
 
+Custom Taxonomies
+	Poets
+	Artists
 
+Custom Post Types
+------------------
 Poems => taxonomized by Poets
-
-
-to-do
+	title 		block
+	content 	block
 Art => taxonomized by Artists
-Fiction => taxonomized by Authors
+	title 		block
+	content 	block
+
+Issues
+	title 		block
+	shortcode 	pdf.js shortcode block
+	subtitle 	custom field
+	index		custom field
+	//0 as the first title crashed some links in wordpress so we're using index as the issue number
+
+//------------------------------------------------------------------------------------------------------------
+
+To-Do
+
+	Secondary menu links
+	Content data-entry
+
+//------------------------------------------------------------------------------------------------------------
