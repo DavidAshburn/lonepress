@@ -7,7 +7,8 @@
 		  	if( have_posts() ){
 		  		while( have_posts() ){
 		  			the_post();
-
+		  			$current_post = get_post();
+		  			$terms = get_the_terms( $current_post, 'poet');
 		  			get_template_part('template-parts/poet', 'single');
 		  		}
 		  	}
@@ -15,10 +16,7 @@
 	</div>
 	<div class="nameplate">
 		<?php 
-			$terms = get_terms([
-				'taxonomy' => 'poet',
-				'hide_empty' => false
-			]);
+
 			$poet_name = $terms[0]->name;
 			$firstlast = explode(" ", $poet_name);
 

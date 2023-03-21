@@ -23,7 +23,7 @@
   	}
 	?>
 	</div>
-	<div class="nameplate">
+	<div class="text-white">
 		<?php 
 			if( $lone_post_type == 'poems') {
 
@@ -39,14 +39,16 @@
 				'hide_empty' => false
 				]);
   			}
+
 			
-			$full_name = $terms[0]->name;
-			$firstlast = explode(" ", $full_name);
+			//$full_name = $terms[0];
+			//$firstlast = explode(" ", $full_name);
 
-			$first_name = strtolower($firstlast[0]);
-			$last_name = strtoupper($firstlast[1]);
+			//$first_name = strtolower($firstlast[0]);
+			//$last_name = strtoupper($firstlast[1]);
 
-			echo $first_name . " . " . $last_name;
+			//echo $first_name . " . " . $last_name;
+			echo $terms;
 
 		?>
 	</div>
