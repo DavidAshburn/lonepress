@@ -9,7 +9,7 @@
 		  		while( have_posts() ){
 		  			the_post();
 
-		  			get_template_part('template-parts/artist', 'archive');
+		  			get_template_part('template-parts/artist', 'single');
 		  		}
 		  	}
 		?>

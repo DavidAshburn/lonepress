@@ -20,13 +20,15 @@
 
 			foreach ($artists as $artist) {
 
+
+
 				$full_name = $artist->name;
 				$firstlast = explode(" ", $full_name);
 
 				$first_name = strtolower($firstlast[0]);
 				$last_name = strtoupper($firstlast[1]);
 				?>
-					<a href="www.google.com" class="flex gap-2">
+					<a href="<?php echo get_term_link($artist) ?>" class="flex gap-2">
 						<p class="flex items-center justify-end w-20 md:w-40 text-slate-300"><?php echo $first_name ?></p>
 						<div class="bg-gradient-to-b from-slate-400 to-gray-50 w-1 h-12"></div>
 						<p class="flex items-center font-black"><?php echo $last_name ?></p>
