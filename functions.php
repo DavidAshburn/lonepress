@@ -1,6 +1,20 @@
 <?php
 
 //------------------------------------------------------------------------------------------------------------
+// Clean the Admin Bar
+//------------------------------------------------------------------------------------------------------------
+
+function lone_remove_from_admin($wp_admin_bar) {
+	if ( ! is_admin() ) {
+		//front-end only removal
+	}
+	$wp_admin_bar->remove_node('wp-logo');
+	$wp_admin_bar->remove_node('comments');
+}
+
+add_action('admin_bar_menu', 'lone_remove_from_admin', 999);
+
+//------------------------------------------------------------------------------------------------------------
 // Theme Support
 //------------------------------------------------------------------------------------------------------------
 
@@ -109,7 +123,7 @@ add_action( 'init', 'lone_create_poet_taxonomy', 0);
 add_action( 'init', 'lone_create_artist_taxonomy', 0);
 
 //------------------------------------------------------------------------------------------------------------
-// Custom Post Types ( Poems )
+// Custom Post Types ( Poems, Art, Issues )
 //------------------------------------------------------------------------------------------------------------
 
 function lone_create_poem_type() {
@@ -152,15 +166,13 @@ function lone_create_poem_type() {
 		'capability_type' 		=> 'post',
 		'show_in_rest' 				=> true
 	);
-
 	register_post_type( 'poems', $poem_args);
-
 }
 
 function lone_create_art_piece_type() {
 	$art_labels = array(
 		'name' 								=> _X('Art', 'Post Type General Name', 'lone'),
-		'singular_name' 			=> _X('Piece', 'Post Type Singular Name', 'lone'),
+		'singular_name' 			=> _X('Art', 'Post Type Singular Name', 'lone'),
 		'menu_name' 					=> __('Art', 'lone'),
 		'parent_item_colon' 	=> __('Art:', 'lone'),
 		'all_items' 					=> __('All Art', 'lone'),
@@ -197,11 +209,53 @@ function lone_create_art_piece_type() {
 		'capability_type' 		=> 'post',
 		'show_in_rest' 				=> true
 	);
-
 	register_post_type( 'art', $art_args);
+}
 
+function lone_create_issue_type() {
+	$issue_labels = array(
+		'name' 								=> _X('Issues', 'Post Type General Name', 'lone'),
+		'singular_name' 			=> _X('Issue', 'Post Type Singular Name', 'lone'),
+		'menu_name' 					=> __('Issues', 'lone'),
+		'parent_item_colon' 	=> __('Parent Issue:', 'lone'),
+		'all_items' 					=> __('All Issues', 'lone'),
+		'view_item' 					=> __('View Issue', 'lone'),
+		'add_new_item' 				=> __('Add Issue', 'lone'),
+		'add_new' 						=> __('Add New', 'lone'),
+		'edit_item' 					=> __('Edit Issue', 'lone'),
+		'update_item' 				=> __('Update Issue', 'lone'),
+		'search_items' 				=> __('Search Issues', 'lone'),
+		'not_found' 					=> __('Not Found', 'lone'),
+		'not_found_in_trash'	=> __('Not found in Trash', 'lone')
+	);
+
+	$issue_args = array(
+		'label' 							=> __('issues', 'lone'),
+		'description' 				=> __('Issues', 'lone'),
+		'labels' 							=> $issue_labels,
+
+		//Post Editor features
+		'supports' 						=> array('title', 'editor', 'excerpt', 'attachment', 'custom-fields'),
+
+		//associating with taxonomy
+		'taxonomies' 					=> array(),
+
+		'heirarchical' 				=> true,
+		'public' 							=> true,
+		'rewrite' 						=> array('slug' => 'issues'),
+		'show_ui' 						=> true,
+		'show_in_menu' 				=> true,
+		'can_export' 					=> true,
+		'has_archive' 				=> true,
+		'exclude_from_search' => false,
+		'publicly_queryable' 	=> true,
+		'capability_type' 		=> 'post',
+		'show_in_rest' 				=> true
+	);
+	register_post_type( 'issues', $issue_args);
 }
 
 add_action('init', 'lone_create_poem_type', 0);
 add_action('init', 'lone_create_art_piece_type', 0);
+add_action('init', 'lone_create_issue_type', 0);
 
